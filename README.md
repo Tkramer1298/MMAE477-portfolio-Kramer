@@ -1,4 +1,4 @@
-# MMAE 477 Engineering Portfolio: [Your Name]
+# MMAE 477 Engineering Portfolio: Thomas Kramer
 
 **Integrated Drone Systems Engineering I · Illinois Tech · Fall 2026**
 
