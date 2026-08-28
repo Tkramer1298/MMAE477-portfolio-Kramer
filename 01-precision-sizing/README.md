@@ -20,23 +20,23 @@ pass is about precision, not exploration, that part already happened in
 A few things are now fixed instead of open, so every student's numbers are
 built the same way and can actually be checked:
 
-- **Vehicle configuration:** a symmetric X-frame quadcopter, four motors,
-  each carrying an equal share of the vehicle's weight in hover. This
-  matters for the thrust check below.
-- **Frame mass:** fixed at exactly **100 g**. Don't source it, don't
-  range it, just use 100 g. It's still something you'll design later in
-  the course.
-- **Wiring, connectors, and power distribution:** fixed at a **20 g**
-  allowance. This is genuinely hard to pin down precisely before a real
-  layout exists, so it's given rather than researched. Don't spend time
-  sourcing it.
-- **The RC transmitter is ground equipment, not vehicle mass.** It stays
-  in the pilot's hands (or on Track A, it's the override link, still not
-  onboard). List it if you like, but it does not count toward the
-  vehicle's total mass. Only the *receiver* is onboard.
-- **No propeller-set discounting games, no spec ranges.** Every row needs
-  a real, currently-sold part with a real link, the same rule as before,
-  now actually checked.
+* **Vehicle configuration:** a symmetric X-frame quadcopter, four motors,
+each carrying an equal share of the vehicle's weight in hover. This
+matters for the thrust check below.
+* **Frame mass:** fixed at exactly **100 g**. Don't source it, don't
+range it, just use 100 g. It's still something you'll design later in
+the course.
+* **Wiring, connectors, and power distribution:** fixed at a **20 g**
+allowance. This is genuinely hard to pin down precisely before a real
+layout exists, so it's given rather than researched. Don't spend time
+sourcing it.
+* **The RC transmitter is ground equipment, not vehicle mass.** It stays
+in the pilot's hands (or on Track A, it's the override link, still not
+onboard). List it if you like, but it does not count toward the
+vehicle's total mass. Only the *receiver* is onboard.
+* **No propeller-set discounting games, no spec ranges.** Every row needs
+a real, currently-sold part with a real link, the same rule as before,
+now actually checked.
 
 Everything else about your build — which track, which specific motor,
 battery, flight controller, etc. — is still your call, exactly as it was
@@ -47,15 +47,15 @@ in `00`.
 Open `sizing-table.csv`. It already has the fixed rows (frame, wiring)
 filled in, don't change those. For every other row:
 
-- One row per component type. If you need four of something, put the
-  quantity in the **Qty** column, the mass of *one* in **Unit mass (g)**,
-  and let **Total mass (g)** be the product, computed, not guessed.
-- A real part, a real link, in the same row.
-- Mark whether it's **Onboard** (flies on the vehicle) or **Ground**
-  (transmitter only). Only Onboard rows count toward the total.
-- Fill in the **Total (onboard only)** row at the bottom by summing the
-  Total mass column for every Onboard row. This number is your vehicle
-  weight, call it **W** (grams).
+* One row per component type. If you need four of something, put the
+quantity in the **Qty** column, the mass of *one* in **Unit mass (g)**,
+and let **Total mass (g)** be the product, computed, not guessed.
+* A real part, a real link, in the same row.
+* Mark whether it's **Onboard** (flies on the vehicle) or **Ground**
+(transmitter only). Only Onboard rows count toward the total.
+* Fill in the **Total (onboard only)** row at the bottom by summing the
+Total mass column for every Onboard row. This number is your vehicle
+weight, call it **W** (grams).
 
 ## Step 2: check that your motor can actually hover with margin
 
@@ -65,7 +65,7 @@ motors together produce exactly enough thrust to support the vehicle's
 weight, split evenly.
 
 ```
-T_hover (per motor) = W / 4
+T\_hover (per motor) = W / 4
 ```
 
 (All of this is in grams-force, the convention the entire hobby motor
@@ -73,7 +73,7 @@ industry already uses: a component's mass in grams is numerically the same
 as the weight it needs supported in grams-force. You don't need to convert
 to Newtons for this exercise.)
 
-Now compare `T_hover` against what your motor can actually deliver. Real
+Now compare `T\_hover` against what your motor can actually deliver. Real
 thrust numbers only exist as bench-tested tables (thrust in grams at a
 given throttle, prop, and battery voltage) — they are not something you
 can compute from a KV rating alone, and vendor listings almost never
@@ -86,12 +86,12 @@ real documented thrust data for it — a source link is required either
 way). All three are the same 2207 stator size, 5" prop class, current
 production, and already close to what several `00` submissions picked:
 
-- **T-Motor F60 Pro IV** (2207.5, 1750/1950/2550KV, 4S-6S) — [product
-  page](https://www.getfpv.com/t-motor-f60-pro-iv-motor.html)
-- **iFlight XING2 2207** (1855/2755KV, 4S-6S) — [product
-  page](https://www.getfpv.com/iflight-xing2-2207-motor-1855kv-2755kv.html)
-- **EMAX ECO II 2207** (1700/1900/2400KV, 3S-6S) — [product
-  page](https://www.getfpv.com/emax-eco-ii-series-2207-motor-1700kv-1900kv-2400kv.html)
+* **T-Motor F60 Pro IV** (2207.5, 1750/1950/2550KV, 4S-6S) — [product
+page](https://www.getfpv.com/t-motor-f60-pro-iv-motor.html)
+* **iFlight XING2 2207** (1855/2755KV, 4S-6S) — [product
+page](https://www.getfpv.com/iflight-xing2-2207-motor-1855kv-2755kv.html)
+* **EMAX ECO II 2207** (1700/1900/2400KV, 3S-6S) — [product
+page](https://www.getfpv.com/emax-eco-ii-series-2207-motor-1700kv-1900kv-2400kv.html)
 
 None of these listings has thrust data on the page itself, that's normal
 for this industry, as you'll find out. Real bench-tested numbers for
@@ -107,7 +107,7 @@ Using the max-thrust number you found, for the throttle/prop/voltage
 condition closest to your build, compute:
 
 ```
-Margin = T_hover / (max thrust at full throttle)
+Margin = T\_hover / (max thrust at full throttle)
 ```
 
 **Target: Margin ≤ 35%.** That's not an arbitrary bar — it means your
@@ -115,7 +115,7 @@ motor hovers well below its own maximum, leaving real headroom for
 maneuvering rather than running near its limit just to stay airborne.
 
 *Worked example, with made-up numbers, not a real motor's* — say your
-tightened table comes out to W = 420 g, so T_hover = 420 / 4 = 105 g per
+tightened table comes out to W = 420 g, so T\_hover = 420 / 4 = 105 g per
 motor. Say the review you found for your candidate reports 1500 g of
 max thrust at full throttle, at a cell count matching your battery.
 Margin = 105 / 1500 ≈ 7%, well under the 35% target. A build that light
@@ -141,14 +141,14 @@ and why, with `01-precision-sizing/sizing-table.csv` as the evidence link.
 
 Full credit needs all four:
 
-- [ ] Every onboard component is a real, linked part with correct
-      Qty / Unit mass / Total mass, and the total sums correctly.
-- [ ] Frame (100 g) and wiring (20 g) are left at the given values; the
-      transmitter is excluded from the onboard total.
-- [ ] The hover-margin calculation is present, correct, and cites a real,
-      documented thrust source for whichever motor was checked.
-- [ ] `reflection.md` is filled in, `DECISIONS.md` has a new row for this
-      pass, and the CSV is genuinely comma-delimited.
+* \[ ] Every onboard component is a real, linked part with correct
+Qty / Unit mass / Total mass, and the total sums correctly.
+* \[ ] Frame (100 g) and wiring (20 g) are left at the given values; the
+transmitter is excluded from the onboard total.
+* \[ ] The hover-margin calculation is present, correct, and cites a real,
+documented thrust source for whichever motor was checked.
+* \[ ] `reflection.md` is filled in, `DECISIONS.md` has a new row for this
+pass, and the CSV is genuinely comma-delimited.
 
 **Partial credit is 50%, flat** — for a real attempt that's missing one or
 more of the four items above, whether it's missing one or all three.
@@ -157,4 +157,5 @@ at the motor-margin check at all.
 
 ## Status
 
-- [ ] Complete, graded on Canvas
+* \[ ] Complete, graded on Canvas
+
