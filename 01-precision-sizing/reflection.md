@@ -11,10 +11,10 @@ ones.)*
 ## Your numbers
 
 * Total onboard vehicle mass, W (g): 335.2 g
-* Battery cell count (S): 4
+* Battery cell count (S): 4S
 * Hover thrust needed per motor, T = W / 4 (g): 83.8 g
-* Motor you're checking against (one of the README's 3 candidates, or your own from `00`):
-* That motor's max thrust at a matching cell count (g), and where you found it (name + link):
+* Motor you're checking against (one of the README's 3 candidates, or your own from `00`): T-Motor F60 PRO IV V2.0 1950KV Motor 
+* That motor's max thrust at a matching cell count (g), and where you found it (name + link):1526g/4S, T-Motor F60 PRO IV V2.0 2550KV Motor, https://www.getfpv.com/t-motor-f60-pro-iv-motor.html
 * Margin = T / max thrust (%):5.5%
 * Does this clear the 35% target? (yes / no, and if no, what would you
 change):yes but it is overpowered by quite a bit. something to tackle later.

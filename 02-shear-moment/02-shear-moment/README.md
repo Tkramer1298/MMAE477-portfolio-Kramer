@@ -5,7 +5,7 @@
 diagram (see Step 4) as an image file in this folder too.
 
 **This builds on `01-precision-sizing`. Don't re-derive your thrust
-number.** Your per-motor hover thrust, `T_hover = W / 4`, is already sitting
+number.** Your per-motor hover thrust, `T\_hover = W / 4`, is already sitting
 in `01-precision-sizing/sizing-table.csv`. That number is **P** everywhere
 below — the load one arm carries at its tip.
 
@@ -22,11 +22,11 @@ round tube — not a fixed example on the board.
 
 ## Given (fixed for everyone, so every table can actually be checked)
 
-- **Arm length, L = 120 mm** (root to motor-mount centerline). This is a
-  stand-in for this exercise, not your final design length — arm length is
-  a real decision you'll come back to later in the course.
-- **Load, P = your own `T_hover`** from `01-precision-sizing`, one motor's
-  share of hover thrust.
+* **Arm length, L = 120 mm** (root to motor-mount centerline). This is a
+stand-in for this exercise, not your final design length — arm length is
+a real decision you'll come back to later in the course.
+* **Load, P = your own `T\_hover`** from `01-precision-sizing`, one motor's
+share of hover thrust.
 
 ## The two analyses
 
@@ -34,7 +34,7 @@ You'll do this twice, on two different candidate designs:
 
 1. **A flat plate** — a width and thickness you choose.
 2. **A round tube** — hollow, an outer diameter and wall thickness you
-   choose.
+choose.
 
 **One of the two must be carbon fiber, the other aluminum — your choice
 which goes with which.** That's a real design decision; log it (and why)
@@ -48,23 +48,23 @@ there's no stress check yet to flag it.
 **Finding density — carbon fiber is the harder one to source, so here's a
 head start:**
 
-- Carbon fiber tube: [DragonPlate 10mm OD tube](https://dragonplate.com/dragonplate-carbon-tube-10mm-od-x-288id-x-24) — 10mm OD, ~1.35mm wall, density 0.056 lb/in³ (≈1.55 g/cm³), stated right on the product page.
-- Carbon fiber plate: [DragonPlate EconomyPlate 2mm sheet](https://dragonplate.com/economyplate-solid-carbon-fiber-sheet-2mm-x-6-x-6) — 2mm thick, 6"x6", density 0.052 lb/in³ (≈1.44 g/cm³), also stated on the page.
+* Carbon fiber tube: [Dragon Plate 10mm OD tube](https://dragonplate.com/dragonplate-carbon-tube-10mm-od-x-288id-x-24) — 10mm OD, \~1.35mm wall, density 0.056 lb/in³ (≈1.55 g/cm³), stated right on the product page.
+* Carbon fiber plate: [DragonPlate EconomyPlate 2mm sheet](https://dragonplate.com/economyplate-solid-carbon-fiber-sheet-2mm-x-6-x-6) — 2mm thick, 6"x6", density 0.052 lb/in³ (≈1.44 g/cm³), also stated on the page.
 
   These two are genuinely different densities — that's real, not a typo. Different product, different resin content and weave, not one universal "CF density." Feel free to use a different real CF product instead, as long as you can point to where its density came from — most vendor pages don't list it, so you may need a materials datasheet rather than the page you'd buy from.
 
-- Aluminum (either shape): density isn't a research problem — it's a well-known constant, about **2.70 g/cm³** for the whole 6xxx/3xxx series, no citation needed. What you do need to source is the actual stock size. Real options: [K&S 10mm OD x 0.45mm wall round tube](https://ksmetals.com/products/al45mm1m-10), [Midwest Steel 6061-T6 thin-wall tube](https://www.midweststeelsupply.com/store/6061aluminumthinwallroundtube) (smallest listed: 3/8" OD x .049" wall), or [Online Metals 6061 flat bar](https://www.onlinemetals.com/en/buy/aluminum-rectangle-bar-6061) for the plate.
+* Aluminum (either shape): density isn't a research problem — it's a well-known constant, about **2.70 g/cm³** for the whole 6xxx/3xxx series, no citation needed. What you do need to source is the actual stock size. Real options: [K\&S 10mm OD x 0.45mm wall round tube](https://ksmetals.com/products/al45mm1m-10), [Midwest Steel 6061-T6 thin-wall tube](https://www.midweststeelsupply.com/store/6061aluminumthinwallroundtube) (smallest listed: 3/8" OD x .049" wall), or [Online Metals 6061 flat bar](https://www.onlinemetals.com/en/buy/aluminum-rectangle-bar-6061) for the plate.
 
 ## Step 1 — Idealized: point load only
 
-Using P = your T_hover and L = 120 mm:
+* Using P = your T\_hover and L = 120 mm: 83.8 gf
 
 ```
 V(x) = P
 M(x) = P(L - x)
 ```
 
-Fill in the `V_idealized_gf` and `M_idealized_gf_mm` columns of
+Fill in the `V\_idealized\_gf` and `M\_idealized\_gf\_mm` columns of
 `calc-table.csv` at all five stations. Check: M at x = 0 should equal
 P x L, and V should be constant at P all the way along.
 
@@ -80,7 +80,7 @@ A = width x thickness
 then its distributed self-weight:
 
 ```
-w0 = rho * A
+w0 = rho \* A
 ```
 
 **Units convention, same as `01`:** stay in grams-force and millimeters
@@ -95,7 +95,7 @@ V(x) = P - w0(L - x)
 M(x) = P(L - x) - w0(L - x)^2 / 2
 ```
 
-Fill in `V_plate_gf` and `M_plate_gf_mm` at all five stations.
+Fill in `V\_plate\_gf` and `M\_plate\_gf\_mm` at all five stations.
 
 ## Step 3 — Analysis 2: the round tube, with self-weight
 
@@ -108,14 +108,14 @@ A = (pi / 4) x (OD^2 - ID^2)
 ```
 
 then repeat Step 2's `w0`, `V(x)`, and `M(x)` calculation for this tube.
-Fill in `V_tube_gf` and `M_tube_gf_mm`.
+Fill in `V\_tube\_gf` and `M\_tube\_gf\_mm`.
 
 ## Sanity check (do this before moving on)
 
-- Idealized case: V(0) should equal P, exactly.
-- Plate and tube cases: V(0) should equal P plus that design's total arm
-  weight (w0 x L). If it doesn't, that's an arithmetic error to find now,
-  not later.
+* Idealized case: V(0) should equal P, exactly.
+* Plate and tube cases: V(0) should equal P plus that design's total arm
+weight (w0 x L). If it doesn't, that's an arithmetic error to find now,
+not later.
 
 ## Step 4 — Sketch the diagrams
 
@@ -135,16 +135,16 @@ evidence links, and what's still uncertain.
 
 Full credit needs all five:
 
-- [ ] Idealized V/M correct at all five stations (V constant at P, M(0) =
-      P x L).
-- [ ] Both the plate and the tube are real, linked, currently-sold parts —
-      not invented dimensions.
-- [ ] One of the two is carbon fiber and the other is aluminum.
-- [ ] `w0` correctly computed from the real area and density for both, and
-      V/M correctly re-derived with self-weight at all five stations for
-      both.
-- [ ] A diagram (hand-sketch, photographed) is in this folder, showing the
-      idealized case alongside both self-weight cases.
+* \[ ] Idealized V/M correct at all five stations (V constant at P, M(0) =
+P x L).
+* \[ ] Both the plate and the tube are real, linked, currently-sold parts —
+not invented dimensions.
+* \[ ] One of the two is carbon fiber and the other is aluminum.
+* \[ ] `w0` correctly computed from the real area and density for both, and
+V/M correctly re-derived with self-weight at all five stations for
+both.
+* \[ ] A diagram (hand-sketch, photographed) is in this folder, showing the
+idealized case alongside both self-weight cases.
 
 Plus: `reflection.md` filled in completely, and `../DECISIONS.md` has a new
 row for this pass with working evidence links.
@@ -155,4 +155,5 @@ pass's calculation, or no meaningful attempt at the self-weight step.
 
 ## Status
 
-- [ ] Complete, graded on Canvas
+* \[ ] Complete, graded on Canvas
+
