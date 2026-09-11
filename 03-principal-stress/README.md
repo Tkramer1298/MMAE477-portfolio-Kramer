@@ -8,8 +8,8 @@ stress elements (see Step 6) as an image file in this folder too.
 **flat-plate design only** (not the tube) — the shear-stress shortcut in
 Step 2 below is exact for a rectangle and would be wrong for a tube.
 Everything you need is already sitting in `02-shear-moment/calc-table.csv`
-— the `V\_plate\_gf` and `M\_plate\_gf\_mm` columns, self-weight included, at
-**two** stations this time: `x\_mm = 0` (the root) and `x\_mm = 60` (the
+— the `V\\\_plate\\\_gf` and `M\\\_plate\\\_gf\\\_mm` columns, self-weight included, at
+**two** stations this time: `x\\\_mm = 0` (the root) and `x\\\_mm = 60` (the
 midpoint of your 120 mm arm).
 
 **Stays in gf and mm, same convention as `01` and `02`.** Stress comes out
@@ -53,8 +53,8 @@ both sets of numbers around; you'll want them again.
 * Your plate's width **b** and thickness **h**, from `02-shear-moment`
 (the same real, sourced part — don't change it here).
 * Your **V** and **M**, self-weight included, from
-`02-shear-moment/calc-table.csv`, the `V\_plate\_gf` / `M\_plate\_gf\_mm`
-columns, at **both** `x\_mm = 0` and `x\_mm = 60`.
+`02-shear-moment/calc-table.csv`, the `V\\\_plate\\\_gf` / `M\\\_plate\\\_gf\\\_mm`
+columns, at **both** `x\\\_mm = 0` and `x\\\_mm = 60`.
 
 ## Step 1 — Cross-section properties
 
@@ -81,8 +81,8 @@ if the surface can't carry a matching tau\_yx, tau\_xy there is zero too)
 and it peaks at the neutral axis:
 
 ```
-Neutral axis (y = 0):   sigma\_x = 0                tau\_xy = 1.5 V / A
-Top surface (y = c):    sigma\_x = M c / I = 6M/(b h^2)      tau\_xy = 0
+Neutral axis (y = 0):   sigma\\\_x = 0                tau\\\_xy = 1.5 V / A
+Top surface (y = c):    sigma\\\_x = M c / I = 6M/(b h^2)      tau\\\_xy = 0
 ```
 
 Apply both rows **at each station** — your root V(0)/M(0), and your
@@ -98,7 +98,7 @@ cross-section (it comes from tau = VQ/(It) evaluated at the neutral axis).
 It is a different number for a tube, which is exactly why this pass is
 plate-only.
 
-Fill in the `sigma\_x\_gf\_mm2` and `tau\_xy\_gf\_mm2` columns of
+Fill in the `sigma\\\_x\\\_gf\\\_mm2` and `tau\\\_xy\\\_gf\\\_mm2` columns of
 `stress-table.csv` for all four rows.
 
 ## Step 3 — Principal stresses and principal planes
@@ -108,11 +108,11 @@ sigma\_y = 0, tau\_xy). The principal stresses and the angle of the
 principal plane:
 
 ```
-sigma\_1,2 = sigma\_x/2 +/- sqrt( (sigma\_x/2)^2 + tau\_xy^2 )
-tan(2 theta\_p) = 2 tau\_xy / sigma\_x
+sigma\\\_1,2 = sigma\\\_x/2 +/- sqrt( (sigma\\\_x/2)^2 + tau\\\_xy^2 )
+tan(2 theta\\\_p) = 2 tau\\\_xy / sigma\\\_x
 ```
 
-Fill in `sigma1\_gf\_mm2`, `sigma2\_gf\_mm2`, and `theta\_p\_deg` for all four
+Fill in `sigma1\\\_gf\\\_mm2`, `sigma2\\\_gf\\\_mm2`, and `theta\\\_p\\\_deg` for all four
 rows.
 
 **Before you grind through the algebra, look at what you already know —
@@ -146,10 +146,10 @@ For the 2D case you have at each point here (one normal stress, one shear,
 nothing else):
 
 ```
-sigma\_vM = sqrt( sigma\_x^2 + 3 tau\_xy^2 )
+sigma\\\_vM = sqrt( sigma\\\_x^2 + 3 tau\\\_xy^2 )
 ```
 
-Compute it at all **four** points and fill in `sigma\_vM\_gf\_mm2`. Two free
+Compute it at all **four** points and fill in `sigma\\\_vM\\\_gf\\\_mm2`. Two free
 sanity checks: at both top-surface points (tau\_xy = 0), sigma\_vM should
 come out *exactly* equal to sigma\_x — pure uniaxial stress is the simplest
 possible check on this formula. At both neutral-axis points, it should
@@ -160,14 +160,14 @@ come out to sqrt(3) \* tau\_xy, about 1.73 times the shear stress there.
 At **each station** (root and mid, separately):
 
 * `sigma1 - sigma2` at that station's neutral axis should equal
-`2 \* tau\_xy` there (pure shear: the two principal stresses are equal and
+`2 \\\* tau\\\_xy` there (pure shear: the two principal stresses are equal and
 opposite).
 * `sigma1` at that station's top surface should equal that station's
-`sigma\_x\_top` from Step 2, exactly, and `sigma2` should be 0.
-* `theta\_p` should come out at (or extremely close to) 45° at the neutral
+`sigma\\\_x\\\_top` from Step 2, exactly, and `sigma2` should be 0.
+* `theta\\\_p` should come out at (or extremely close to) 45° at the neutral
 axis and 0° at the top surface. If it doesn't, that's an arithmetic slip
 to find now.
-* `sigma\_vM` should pass the two checks from Step 4.
+* `sigma\\\_vM` should pass the two checks from Step 4.
 
 ## Step 6 — Sketch the stress elements (root only)
 
@@ -195,15 +195,15 @@ Full credit needs all six:
 
 * \[ ] Cross-section properties (A, I, c) computed correctly from your own
 plate's b and h.
-* \[ ] `sigma\_x` and `tau\_xy` correctly computed at all four points (root
+* \[ ] `sigma\\\_x` and `tau\\\_xy` correctly computed at all four points (root
 neutral axis/top, mid neutral axis/top), using your own V and M
 from `02` at both x = 0 and x = 60.
-* \[ ] Principal stresses (`sigma\_1`, `sigma\_2`) correctly computed at all
+* \[ ] Principal stresses (`sigma\\\_1`, `sigma\\\_2`) correctly computed at all
 four points.
-* \[ ] `theta\_p` correctly computed at all four points (or correctly
+* \[ ] `theta\\\_p` correctly computed at all four points (or correctly
 reasoned to 45°/0° directly — either is fine, as long as it's
 right).
-* \[ ] `sigma\_vM` correctly computed at all four points.
+* \[ ] `sigma\\\_vM` correctly computed at all four points.
 * \[ ] Stress-element sketches (both orientations, root only) are in this
 folder.
 
