@@ -1,5 +1,5 @@
 location,x_mm,y_mm,sigma_x_gf_mm2,tau_xy_gf_mm2,sigma1_gf_mm2,sigma2_gf_mm2,theta_p_deg,sigma_vM_gf_mm2
-root_neutral_axis,0,0,,,,,,
-root_top_surface,0,,,,,,,
-mid_neutral_axis,60,0,,,,,,
-mid_top_surface,60,,,,,,,
+root_neutral_axis,0,0,0,1.055919784,1.055919784,-1.055919784,45,1.828906715
+root_top_surface,0,1.5875,201.9699843,0,201.9699843,0,0,201.9699843
+mid_neutral_axis,60,0,0,1.335904358,1.335904358,-1.335904358,45,2.313854222
+mid_top_surface,60,1.5875,111.5674264,0,111.5674264,0,0,111.5674264

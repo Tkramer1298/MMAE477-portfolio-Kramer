@@ -8,8 +8,8 @@ stress elements (see Step 6) as an image file in this folder too.
 **flat-plate design only** (not the tube) — the shear-stress shortcut in
 Step 2 below is exact for a rectangle and would be wrong for a tube.
 Everything you need is already sitting in `02-shear-moment/calc-table.csv`
-— the `V_plate_gf` and `M_plate_gf_mm` columns, self-weight included, at
-**two** stations this time: `x_mm = 0` (the root) and `x_mm = 60` (the
+— the `V\_plate\_gf` and `M\_plate\_gf\_mm` columns, self-weight included, at
+**two** stations this time: `x\_mm = 0` (the root) and `x\_mm = 60` (the
 midpoint of your 120 mm arm).
 
 **Stays in gf and mm, same convention as `01` and `02`.** Stress comes out
@@ -50,11 +50,11 @@ both sets of numbers around; you'll want them again.
 
 ## Given
 
-- Your plate's width **b** and thickness **h**, from `02-shear-moment`
-  (the same real, sourced part — don't change it here).
-- Your **V** and **M**, self-weight included, from
-  `02-shear-moment/calc-table.csv`, the `V_plate_gf` / `M_plate_gf_mm`
-  columns, at **both** `x_mm = 0` and `x_mm = 60`.
+* Your plate's width **b** and thickness **h**, from `02-shear-moment`
+(the same real, sourced part — don't change it here).
+* Your **V** and **M**, self-weight included, from
+`02-shear-moment/calc-table.csv`, the `V\_plate\_gf` / `M\_plate\_gf\_mm`
+columns, at **both** `x\_mm = 0` and `x\_mm = 60`.
 
 ## Step 1 — Cross-section properties
 
@@ -76,13 +76,13 @@ the derivation
 [here](https://sdcverifier.com/structural-engineering-101/what-is-bending-stress/)
 if you want the full picture, not required reading for this pass), and the
 shear stress from V is *not* constant either — it has to go to zero at the
-top and bottom surfaces (those are free surfaces, and tau_xy = tau_yx, so
-if the surface can't carry a matching tau_yx, tau_xy there is zero too)
+top and bottom surfaces (those are free surfaces, and tau\_xy = tau\_yx, so
+if the surface can't carry a matching tau\_yx, tau\_xy there is zero too)
 and it peaks at the neutral axis:
 
 ```
-Neutral axis (y = 0):   sigma_x = 0                tau_xy = 1.5 V / A
-Top surface (y = c):    sigma_x = M c / I = 6M/(b h^2)      tau_xy = 0
+Neutral axis (y = 0):   sigma\_x = 0                tau\_xy = 1.5 V / A
+Top surface (y = c):    sigma\_x = M c / I = 6M/(b h^2)      tau\_xy = 0
 ```
 
 Apply both rows **at each station** — your root V(0)/M(0), and your
@@ -98,37 +98,37 @@ cross-section (it comes from tau = VQ/(It) evaluated at the neutral axis).
 It is a different number for a tube, which is exactly why this pass is
 plate-only.
 
-Fill in the `sigma_x_gf_mm2` and `tau_xy_gf_mm2` columns of
+Fill in the `sigma\_x\_gf\_mm2` and `tau\_xy\_gf\_mm2` columns of
 `stress-table.csv` for all four rows.
 
 ## Step 3 — Principal stresses and principal planes
 
-At each of the four points, you have a 2D stress state (sigma_x,
-sigma_y = 0, tau_xy). The principal stresses and the angle of the
+At each of the four points, you have a 2D stress state (sigma\_x,
+sigma\_y = 0, tau\_xy). The principal stresses and the angle of the
 principal plane:
 
 ```
-sigma_1,2 = sigma_x/2 +/- sqrt( (sigma_x/2)^2 + tau_xy^2 )
-tan(2 theta_p) = 2 tau_xy / sigma_x
+sigma\_1,2 = sigma\_x/2 +/- sqrt( (sigma\_x/2)^2 + tau\_xy^2 )
+tan(2 theta\_p) = 2 tau\_xy / sigma\_x
 ```
 
-Fill in `sigma1_gf_mm2`, `sigma2_gf_mm2`, and `theta_p_deg` for all four
+Fill in `sigma1\_gf\_mm2`, `sigma2\_gf\_mm2`, and `theta\_p\_deg` for all four
 rows.
 
 **Before you grind through the algebra, look at what you already know —
 true at *either* station, since it only depends on which of the two
 points you're at, not which x you're at:**
 
-- At **any neutral axis**, sigma_x = 0 — that's pure shear. Pure shear
-  always rotates to equal-and-opposite principal stresses at exactly
-  **45°**. You can use the formulas to confirm this, but you can also just
-  see it coming.
-- At **any top surface**, tau_xy = 0 already. That means the x-y
-  orientation you're already in *is* the principal orientation — theta_p =
-  0°, sigma_1 = sigma_x, sigma_2 = 0. There is nothing to rotate to. This is
-  worth actually noticing, not just computing: tau = 0 on a face is the
-  definition of a principal plane, you don't need the formula to tell you
-  that one.
+* At **any neutral axis**, sigma\_x = 0 — that's pure shear. Pure shear
+always rotates to equal-and-opposite principal stresses at exactly
+**45°**. You can use the formulas to confirm this, but you can also just
+see it coming.
+* At **any top surface**, tau\_xy = 0 already. That means the x-y
+orientation you're already in *is* the principal orientation — theta\_p =
+0°, sigma\_1 = sigma\_x, sigma\_2 = 0. There is nothing to rotate to. This is
+worth actually noticing, not just computing: tau = 0 on a face is the
+definition of a principal plane, you don't need the formula to tell you
+that one.
 
 What *does* change between the two stations is the magnitude, not the
 character — same 45°/0° pattern, different numbers.
@@ -146,37 +146,37 @@ For the 2D case you have at each point here (one normal stress, one shear,
 nothing else):
 
 ```
-sigma_vM = sqrt( sigma_x^2 + 3 tau_xy^2 )
+sigma\_vM = sqrt( sigma\_x^2 + 3 tau\_xy^2 )
 ```
 
-Compute it at all **four** points and fill in `sigma_vM_gf_mm2`. Two free
-sanity checks: at both top-surface points (tau_xy = 0), sigma_vM should
-come out *exactly* equal to sigma_x — pure uniaxial stress is the simplest
+Compute it at all **four** points and fill in `sigma\_vM\_gf\_mm2`. Two free
+sanity checks: at both top-surface points (tau\_xy = 0), sigma\_vM should
+come out *exactly* equal to sigma\_x — pure uniaxial stress is the simplest
 possible check on this formula. At both neutral-axis points, it should
-come out to sqrt(3) * tau_xy, about 1.73 times the shear stress there.
+come out to sqrt(3) \* tau\_xy, about 1.73 times the shear stress there.
 
 ## Step 5 — Sanity checks (do these before moving on)
 
 At **each station** (root and mid, separately):
 
-- `sigma1 - sigma2` at that station's neutral axis should equal
-  `2 * tau_xy` there (pure shear: the two principal stresses are equal and
-  opposite).
-- `sigma1` at that station's top surface should equal that station's
-  `sigma_x_top` from Step 2, exactly, and `sigma2` should be 0.
-- `theta_p` should come out at (or extremely close to) 45° at the neutral
-  axis and 0° at the top surface. If it doesn't, that's an arithmetic slip
-  to find now.
-- `sigma_vM` should pass the two checks from Step 4.
+* `sigma1 - sigma2` at that station's neutral axis should equal
+`2 \* tau\_xy` there (pure shear: the two principal stresses are equal and
+opposite).
+* `sigma1` at that station's top surface should equal that station's
+`sigma\_x\_top` from Step 2, exactly, and `sigma2` should be 0.
+* `theta\_p` should come out at (or extremely close to) 45° at the neutral
+axis and 0° at the top surface. If it doesn't, that's an arithmetic slip
+to find now.
+* `sigma\_vM` should pass the two checks from Step 4.
 
 ## Step 6 — Sketch the stress elements (root only)
 
 By hand, for the **root's two points only** (mid-span looks identical in
 shape — same 45°/0° rotations — just different numbers, so it's not worth
 redrawing, though you're welcome to if you want the practice): draw the
-small stress-element square in its original x-y orientation (with sigma_x
-and tau_xy labeled, sigma_y = 0), then draw it again rotated to the
-principal orientation you found (sigma_1 and sigma_2 labeled, no shear).
+small stress-element square in its original x-y orientation (with sigma\_x
+and tau\_xy labeled, sigma\_y = 0), then draw it again rotated to the
+principal orientation you found (sigma\_1 and sigma\_2 labeled, no shear).
 Four little squares total. Photograph it and drop the image into this
 folder (`stress-elements.jpg` or similar).
 
@@ -193,19 +193,19 @@ way `01`/`02` did, so the row can just note which of your two `02` designs
 
 Full credit needs all six:
 
-- [ ] Cross-section properties (A, I, c) computed correctly from your own
-      plate's b and h.
-- [ ] `sigma_x` and `tau_xy` correctly computed at all four points (root
-      neutral axis/top, mid neutral axis/top), using your own V and M
-      from `02` at both x = 0 and x = 60.
-- [ ] Principal stresses (`sigma_1`, `sigma_2`) correctly computed at all
-      four points.
-- [ ] `theta_p` correctly computed at all four points (or correctly
-      reasoned to 45°/0° directly — either is fine, as long as it's
-      right).
-- [ ] `sigma_vM` correctly computed at all four points.
-- [ ] Stress-element sketches (both orientations, root only) are in this
-      folder.
+* \[ ] Cross-section properties (A, I, c) computed correctly from your own
+plate's b and h.
+* \[ ] `sigma\_x` and `tau\_xy` correctly computed at all four points (root
+neutral axis/top, mid neutral axis/top), using your own V and M
+from `02` at both x = 0 and x = 60.
+* \[ ] Principal stresses (`sigma\_1`, `sigma\_2`) correctly computed at all
+four points.
+* \[ ] `theta\_p` correctly computed at all four points (or correctly
+reasoned to 45°/0° directly — either is fine, as long as it's
+right).
+* \[ ] `sigma\_vM` correctly computed at all four points.
+* \[ ] Stress-element sketches (both orientations, root only) are in this
+folder.
 
 Plus: `reflection.md` filled in completely, and `../DECISIONS.md` has a new
 row for this pass.
@@ -217,4 +217,5 @@ step.
 
 ## Status
 
-- [ ] Complete, graded on Canvas
+* \[ ] Complete, graded on Canvas
+
