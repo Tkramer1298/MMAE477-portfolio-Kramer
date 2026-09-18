@@ -1,2 +1,2 @@
 b_mm,h_mm,I_mm4,P_gf,E_GPa,E_gf_mm2,EI_gf_mm2,y_hand_mm,y_fea_mm,pct_diff_defl,sigma_vm_root_hand_gf_mm2,sigma_vm_root_fea_gf_mm2,sigma_vm_mid_hand_gf_mm2,sigma_vm_mid_fea_gf_mm2
-,,,,,,,,,,,,,
+24.5,3.175,65.35,83.8,70,7138040,466470914,0.103,0.102,0.01,201.97,176.9,111.57,117.2

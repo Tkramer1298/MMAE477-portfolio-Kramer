@@ -11,6 +11,8 @@ defense this semester, they ask exactly these questions.
 |#|Date|Decision|Alternatives considered|Criteria used|Evidence (link)|Assumptions still uncertain|
 |3|9/4/26|An aluminum plate for the arms of the drone|Carbon fiber as a tube or plate|The weight of the material, how much thrust it can handle. And how much thrust would be needed to lift the bot.|https://www.onlinemetals.com/en/buy/aluminum/0-125-x-1-aluminum-rectangle-bar-6061-t6511-extruded/pid/1125|I am uncertain how the arms will mount to the body of the drone or how motors will be mounted.|
 |4|9/11/26|calculating shear and bending moments on the arm we decided.|only calculations done today.|Used equations given in the readme file within 03 lab|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer.git|uncertain how the arm will preform in a FEA study.|
+|#|Date|Decision|Alternatives considered|Criteria used|Evidence (link)|Assumptions still uncertain|
+|5|9/18/26|Testing the Aluminum beam within cad|Carbon fiber as a tube or plate|The length , width, and height of the beam, along with the material|https://www.engineeringtoolbox.com/young-modulus-d\_417.html#gsc.tab=0<br />|All calculations worked out within Cad and the Beam looks to be strong enough to hold the weight of the thrust from a motor.|
 
 
 

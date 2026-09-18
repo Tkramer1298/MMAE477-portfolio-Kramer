@@ -9,9 +9,9 @@ re-derive P, L, b, or h.** Use your **flat-plate design only** (same
 restriction as `03`, for the same reason — the beam theory here assumes a
 simple rectangular section). Everything you need is already sitting in
 `02-shear-moment/calc-table.csv` (your plate's width **b**, thickness
-**h**, and your point load **P** = T_hover) and in
+**h**, and your point load **P** = T\_hover) and in
 `03-principal-stress/reflection.md` (A = bh, I = bh^3/12, c = h/2, and your
-predicted root vs. mid-span sigma_vM values).
+predicted root vs. mid-span sigma\_vM values).
 
 ## What's new this time
 
@@ -30,22 +30,22 @@ pass's research task, same spirit as sourcing density in `02`. Find E for
 your plate's actual material (the same product you linked in `02`, not a
 generic "aluminum" or "carbon fiber" number):
 
-- **Aluminum:** a textbook or datasheet value for 6061-T6 (or whichever
-  alloy your plate actually is) is fine — this one's a well-known constant,
-  no vendor-page hunting required, but cite where you got it.
-- **Carbon fiber:** source this from your specific product's datasheet,
-  not a generic "carbon fiber is ~230 GPa" figure — that's aerospace-grade
-  unidirectional fiber, not the quasi-isotropic woven sheet you likely
-  priced in `02`. Real woven CF plate is usually well below that. If your
-  vendor page doesn't list it, look for a linked datasheet PDF before
-  falling back to a general materials reference, and say in
-  `reflection.md` which you used and why.
+* **Aluminum:** a textbook or datasheet value for 6061-T6 (or whichever
+alloy your plate actually is) is fine — this one's a well-known constant,
+no vendor-page hunting required, but cite where you got it.
+* **Carbon fiber:** source this from your specific product's datasheet,
+not a generic "carbon fiber is \~230 GPa" figure — that's aerospace-grade
+unidirectional fiber, not the quasi-isotropic woven sheet you likely
+priced in `02`. Real woven CF plate is usually well below that. If your
+vendor page doesn't list it, look for a linked datasheet PDF before
+falling back to a general materials reference, and say in
+`reflection.md` which you used and why.
 
 **Unit conversion, new for this pass.** E is normally quoted in GPa. Every
 other number in this repo has stayed in gf and mm, so convert:
 
 ```
-E [gf/mm^2] = E [GPa] x 101,972
+E \[gf/mm^2] = E \[GPa] x 101,972
 ```
 
 (This comes from 1 GPa = 1e9 Pa, 1 N = 101.972 gf, 1 m^2 = 1e6 mm^2 — the
@@ -61,8 +61,8 @@ Using your P, L = 120 mm, E, and I:
 y(L) = P L^3 / (3 E I)
 ```
 
-Fill in `y_hand_mm` in `calc-table.csv`. Show the intermediate EI value
-too (`EI_gf_mm2` column) — if this pass's number looks wrong later, EI is
+Fill in `y\_hand\_mm` in `calc-table.csv`. Show the intermediate EI value
+too (`EI\_gf\_mm2` column) — if this pass's number looks wrong later, EI is
 the first thing worth checking.
 
 **Self-weight is not part of this pass.** You derived the self-weight
@@ -84,23 +84,23 @@ right E.
 
 In Inventor's Stress Analysis environment:
 
-- Fix the root face (Fixed constraint), the end at x = 0.
-- Apply your P as a force at the tip face, in the same direction as your
-  hand calc (perpendicular to the beam, simulating the motor's thrust
-  reaction).
-- Run the simulation and read off the maximum displacement.
+* Fix the root face (Fixed constraint), the end at x = 0.
+* Apply your P as a force at the tip face, in the same direction as your
+hand calc (perpendicular to the beam, simulating the motor's thrust
+reaction).
+* Run the simulation and read off the maximum displacement.
 
 Screenshot the displacement contour plot with the max value visible, and
 drop it into this folder (`inventor-deflection.png` or similar). Fill in
-`y_fea_mm` in `calc-table.csv`.
+`y\_fea\_mm` in `calc-table.csv`.
 
 ## Step 4 — Compare deflection
 
 ```
-% diff = (y_fea - y_hand) / y_hand x 100
+% diff = (y\_fea - y\_hand) / y\_hand x 100
 ```
 
-Fill in `pct_diff_defl`. Some difference is expected and fine — the hand
+Fill in `pct\_diff\_defl`. Some difference is expected and fine — the hand
 calc assumes an idealized 1D beam (plane sections stay plane, load
 applied at a single point, perfectly rigid support), while Inventor solves
 the actual 3D solid. A large difference (over 25% or so) is usually a
@@ -115,23 +115,23 @@ top-surface stress would match an FEA model more closely, and reasoned
 about why the root — right at the fixed support — is a worse fit for the
 beam-theory idealization. Now check that prediction directly:
 
-- On your Inventor model, probe von Mises stress on the **top surface** at
-  x = 0 (root) and at x = 60 mm (mid-span). Both points are easy to reach —
-  just click the visible top face at each location, no section cut needed.
-- Record both FEA values alongside your `03` hand values for the same two
-  points in `calc-table.csv`.
-- In `reflection.md`, say whether your `03` prediction was right, and by
-  how much each station's FEA/hand-calc agreement compares.
+* On your Inventor model, probe von Mises stress on the **top surface** at
+x = 0 (root) and at x = 60 mm (mid-span). Both points are easy to reach —
+just click the visible top face at each location, no section cut needed.
+* Record both FEA values alongside your `03` hand values for the same two
+points in `calc-table.csv`.
+* In `reflection.md`, say whether your `03` prediction was right, and by
+how much each station's FEA/hand-calc agreement compares.
 
 ## Sanity check (do this before moving on)
 
-- `y_hand_mm` should be a small number, well under a millimeter for a
-  120 mm arm at hover thrust — if you get several millimeters or more,
-  check your E conversion first (a units slip here is the single most
-  likely mistake in this pass).
-- `y_fea_mm` should be in the same ballpark as `y_hand_mm`, not off by an
-  order of magnitude. If it is, it's very likely a units or constraint
-  mistake in Inventor, not a real physical effect.
+* `y\_hand\_mm` should be a small number, well under a millimeter for a
+120 mm arm at hover thrust — if you get several millimeters or more,
+check your E conversion first (a units slip here is the single most
+likely mistake in this pass).
+* `y\_fea\_mm` should be in the same ballpark as `y\_hand\_mm`, not off by an
+order of magnitude. If it is, it's very likely a units or constraint
+mistake in Inventor, not a real physical effect.
 
 ## Step 6 (optional, not required) — probe the neutral axis
 
@@ -155,18 +155,18 @@ what the deflection/stress comparison told you about it.
 
 Full credit needs all six:
 
-- [ ] E correctly sourced for your actual material and correctly
-      converted to gf/mm^2, with a citation, in `reflection.md`.
-- [ ] `y_hand_mm` correctly computed from your own P, L, E, and I.
-- [ ] Inventor model built to the correct L, b, h, with the correct
-      material assigned.
-- [ ] Simulation correctly constrained (root fixed, tip load matching P
-      and direction), `y_fea_mm` recorded, with a screenshot in this
-      folder.
-- [ ] `pct_diff_defl` computed and briefly explained in `reflection.md`.
-- [ ] Root and mid-span top-surface von Mises probed in Inventor and
-      compared against your `03` hand values, with your `03` prediction
-      revisited in `reflection.md`.
+* \[ ] E correctly sourced for your actual material and correctly
+converted to gf/mm^2, with a citation, in `reflection.md`.
+* \[ ] `y\_hand\_mm` correctly computed from your own P, L, E, and I.
+* \[ ] Inventor model built to the correct L, b, h, with the correct
+material assigned.
+* \[ ] Simulation correctly constrained (root fixed, tip load matching P
+and direction), `y\_fea\_mm` recorded, with a screenshot in this
+folder.
+* \[ ] `pct\_diff\_defl` computed and briefly explained in `reflection.md`.
+* \[ ] Root and mid-span top-surface von Mises probed in Inventor and
+compared against your `03` hand values, with your `03` prediction
+revisited in `reflection.md`.
 
 Plus: `reflection.md` filled in completely, and `../DECISIONS.md` has a
 new row for this pass.
@@ -179,4 +179,5 @@ the required halves.
 
 ## Status
 
-- [ ] Complete, graded on Canvas
+* \[ ] Complete, graded on Canvas
+
