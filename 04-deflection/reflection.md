@@ -17,7 +17,7 @@
 ## Hand calc
 
 * EI (gf\*mm^2): 466,470,914
-* y\_hand = P L^3 / (3 E I), L = 120 mm (mm): 0.103 mm	
+* y\_hand = P L^3 / (3 E I), L = 120 mm (mm): 0.103 mm
 
 ## Inventor model and simulation
 

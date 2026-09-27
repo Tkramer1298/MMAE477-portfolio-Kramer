@@ -1,0 +1,5 @@
+run,geometry,load_case,mesh_refinement,num_elements,load_per_motor_gf,load_per_motor_N,max_disp_mm,tip_disp_probe_mm,stress_type,max_stress_MPa,max_stress_gf_mm2,max_stress_location,arm_mid_stress_MPa,arm_mid_stress_gf_mm2
+sharp_1,sharp,hover,1 (default),0.1,83.8,0.822,0.012,0.009,Von,2.407,245.45,Arm/Motor plate connection,0.984,100.34
+sharp_2,sharp,hover,2,0.05,83.8,0.822,0.013,0.009,Von,2.363,240.96,Arm/Motor plate connection,0.816,83.21
+sharp_3,sharp,hover,3 (finest),0.02,83.8,0.822,0.013,0.01,Von,3.68,375.26,Arm/Motor plate connection,0.747,76.17
+fullthrottle,sharp,full_throttle,3 (finest),0.02,83.8,0.822,0.239,0.237,Von,67.013,6833.42,Arm/Motor plate connection,35.5,3620
