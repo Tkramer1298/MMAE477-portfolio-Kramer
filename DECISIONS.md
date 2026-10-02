@@ -14,7 +14,15 @@ defense this semester, they ask exactly these questions.
 |#|Date|Decision|Alternatives considered|Criteria used|Evidence (link)|Assumptions still uncertain|
 |5|9/18/26|Testing the Aluminum beam within cad|Carbon fiber as a tube or plate|The length , width, and height of the beam, along with the material|https://www.engineeringtoolbox.com/young-modulus-d\_417.html#gsc.tab=0<br />|All calculations worked out within Cad and the Beam looks to be strong enough to hold the weight of the thrust from a motor.|
 
-
+|#|Date|Decision|Alternatives considered|Criteria used|Evidence (link)|Assumptions still uncertain|
+|-|-|-|-|-|-|-|
+|6|9/25/26|Drone made of aluminum, Made in multiple parts screwed together|1 piece 3D printed drone|A drone made of aluminum would support more weight.|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer/blob/main/00-drone-sizing-exercise/sizing-table.csv.xlsx|Making a drone as 1 piece by 3D printed may work better in the long run|
+|7|10/2/26||||||
+|8|||||||
+|9|||||||
+|10|||||||
+|11|||||||
+|12|||||||
 
 
 
