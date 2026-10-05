@@ -6,7 +6,7 @@ case2,2A,2,max_abs_N,1000,gf
 case2,2B,2,N_BC,0,gf
 case2,2B,2,critical_member_force,1000,gf
 case2,2B,2,max_abs_N,1000,gf
-multicell,A,6,diag_abs_N,,gf
-multicell,A,6,max_abs_N,,gf
-multicell,B,6,diag_abs_N,,gf
-multicell,B,6,max_abs_N,,gf
+multicell,A,6,diag_abs_N,300.463,gf
+multicell,A,6,max_abs_N,1000,gf
+multicell,B,6,diag_abs_N,300.463,gf
+multicell,B,6,max_abs_N,1000,gf

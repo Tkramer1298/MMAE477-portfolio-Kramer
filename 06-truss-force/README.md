@@ -106,9 +106,9 @@ Case 2B changes only the diagonal in the left-hand cell:
 
 ```text
 D o-----------o B-----------o A
-    \\           |         /   ^
-       \\        |      /      | P
-          \\     |   /         |
+    \\\\           |         /   ^
+       \\\\        |      /      | P
+          \\\\     |   /         |
 E o-----------o C
 ```
 
@@ -123,8 +123,8 @@ nominal values above.
 
 Record only the following in `force-results.csv`:
 
-* `N\_AB`
-* `N\_AC`
+* `N\\\_AB`
+* `N\\\_AC`
 
 Keep the sign on each member force: positive means tension, negative means
 compression.
@@ -138,7 +138,7 @@ You should calculate all six member forces for yourself, but only record
 these two checks in `force-results.csv`:
 
 * the force in the most highly loaded member, including its sign
-* the maximum absolute member force, `max\_abs\_N`
+* the maximum absolute member force, `max\\\_abs\\\_N`
 
 Identify the corresponding member and whether it is in tension or
 compression in `reflection.md`.
@@ -158,9 +158,9 @@ in the worked Case-2A example.
 folder as `case2B-working.pdf`, `case2B-working.jpg`, or similar.
 6. Enter only the following numerical checks in `force-results.csv`:
 
-   * `N\_BC`
+   * `N\\\_BC`
    * the force in the most highly loaded member, including its sign
-   * `max\_abs\_N`
+   * `max\\\_abs\\\_N`
 
 One of these values deserves special attention. Don't discard a result
 just because it is zero or nearly zero — think about why joint equilibrium
@@ -174,7 +174,7 @@ arrangements.
 First compare
 
 ```text
-max |N\_e|
+max |N\\\_e|
 ```
 
 for the two structures. Then look at the **sign** of the force in the member
@@ -193,7 +193,7 @@ mean equal structural risk.
 Now keep the overall dimensions fixed:
 
 ```text
-L\_total = 120 mm
+L\\\_total = 120 mm
 h       = 30 mm
 P       = 250 gf
 ```
@@ -201,7 +201,7 @@ P       = 250 gf
 and subdivide the same arm into more cells. For `n` cells,
 
 ```text
-cell width = L\_total / n
+cell width = L\\\_total / n
 ```
 
 Use top nodes
@@ -270,8 +270,8 @@ For four cells:
 
 ```text
 T0 o-------o-------o-------o-------o T4
-    \\       |\\       |\\       |     /
-       \\    |   \\    |   \\    |  /
+    \\\\       |\\\\       |\\\\       |     /
+       \\\\    |   \\\\    |   \\\\    |  /
 B0 o-------o-------o-------o
 ```
 
@@ -280,8 +280,8 @@ do **not** enter a separate set of numbers for every case. In
 `force-results.csv`, report only the `n = 6` endpoint values for each
 family:
 
-* the magnitude of a diagonal-member force, `diag\_abs\_N`
-* the overall maximum member-force magnitude, `max\_abs\_N`
+* the magnitude of a diagonal-member force, `diag\\\_abs\\\_N`
+* the overall maximum member-force magnitude, `max\\\_abs\\\_N`
 
 Use your calculations for the intermediate values to answer the trend
 questions in `reflection.md`.
