@@ -18,8 +18,8 @@ defense this semester, they ask exactly these questions.
 |-|-|-|-|-|-|-|
 |6|9/25/26|Drone made of aluminum, Made in multiple parts screwed together|1 piece 3D printed drone|A drone made of aluminum would support more weight.|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer/blob/main/00-drone-sizing-exercise/sizing-table.csv.xlsx|Making a drone as 1 piece by 3D printed may work better in the long run|
 |7|10/2/26|adding trusses to the vertical plates of my drone.|Keeping the plates full for better support but higher weight|Trusses are a great way to reduce weight while keeping most of the structural integrity of the plate.|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer/tree/43056a4f11c374b13ac77e352ea5fb38fb53cc39/06-truss-force|Adding trusses may not be viable with a 3D printed drone body.|
-|8|10/9/26|Seeing how thrust forces act on an arm in a 3D space.|no alternatives to consider|The google colab file used to run the experiment.||how a thrust force will act on my concept drone arms|
-|9|||||||
+|8|10/9/26|Seeing how thrust forces act on an arm in a 3D space.|no alternatives to consider|The google Collab file used to run the experiment.|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer.git|how a thrust force will act on my concept drone arms|
+|9|10/16/26|Calculating various specifications needed for my drone to fly to assure components picked will support my drone.|considering motor sizes, battery sizes, esc capacity.|sizing table from 01|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer.git|partially worried my drone may be over powered.|
 |10|||||||
 |11|||||||
 |12|||||||
