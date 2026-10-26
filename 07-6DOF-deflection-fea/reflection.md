@@ -14,7 +14,7 @@ All groups use the same prescribed beam: **L = 120 mm**, **b = 20 mm**, **h = 10
 ## Step 2 — Bending in a second plane
 
 * Which is greater: the vertical tip deflection from `Fy` or the lateral tip deflection from `Fz`? By what approximate factor? The vertical tip deflection of Fy by a factor of 3.91
-* Explain the difference using the two second moments of area, `I\\\\\\\\\\\\\\\_y` and `I\\\\\\\\\\\\\\\_z`. due to the thickness being 2 times the height of the beam. its resistance to lateral forces is much greater than its resistance to vertical loads.
+* Explain the difference using the two second moments of area, `I\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_y` and `I\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\_z`. due to the thickness being 2 times the height of the beam. its resistance to lateral forces is much greater than its resistance to vertical loads.
 
 ## Step 3 — Thrust and motor reaction moment
 

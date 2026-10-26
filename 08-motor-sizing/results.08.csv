@@ -1,19 +1,19 @@
 step,quantity,value,units,source / notes
-1,vehicle weight W,335.2,g,onboard total from sizing-table.csv
+1,vehicle weight W,351.6,g,onboard total from sizing-table.csv
 1,battery cell count,4,S,
-1,battery nominal voltage V,22.2,V,3.7 V per cell
-2,hover thrust per motor T_hover,83.8,g,W / 4
+1,battery nominal voltage V,14.8,V,3.7 V per cell
+2,hover thrust per motor T_hover,87.9,g,W / 4
 3,motor (name and KV),T-Motor F60 PRO IV V2.0 2550KV Motor,2550 KV,https://www.getfpv.com/t-motor-f60-pro-iv-motor.html
-3,propeller,Gemfan 2925 2.9X2.5X5 5-Blade PC Propeller - Props For DJI Avata RC FPV Freestyle 3inch Cinewhoop Drone Quadcopter,,https://rcdrone.top/products/4-6-10pairs-gemfan-2925-2-9x2-5x5-5-blade-pc-propeller
-3,thrust table source,,GEMFAN 2925,https://rcdrone.top/products/4-6-10pairs-gemfan-2925-2-9x2-5x5-5-blade-pc-propeller
-3,hover throttle,30,%,from thrust table; interpolate if needed
+3,propeller,T-MOTORHOBBY  Freestyle Prop,T5143S,https://tmotorhobby.com/goods-851-T-MOTORHOBBY+T5143S+Freestyle+Prop+2Pairsbag.html
+3,thrust table source,,,https://tmotorhobby.com/goods.php?id=960
+3,hover throttle,5,%,from thrust table; interpolate if needed
 3,hover current (battery),0.165, A,per motor
 3,hover rpm,7909,rpm,Linear value
 3,full-throttle thrust T_max,1526,g,per motor
 3,full-throttle current I_max,41.65,A,per motor
 3,full-throttle rpm,26363,rpm,
 3,hover margin T_hover / T_max,5.5,%,target <= 35%
-4,no-load speed KV x V,56610, rpm,
+4,no-load speed KV x V,37740, rpm,
 4,full-throttle rpm / no-load speed,0.47,,should be below 1
 4,torque constant Kt,0.004,N m/A,9.55 / KV
 4,hover motor current I_battery / throttle,1.82,A,
@@ -23,5 +23,5 @@ step,quantity,value,units,source / notes
 5,ESC rating per motor,50,A,target >= 1.2 x I_max
 5,battery capacity,550,mAh,
 5,battery C-rating,90,C,
-5,battery maximum current,0.55,A,target >= 4 x I_max
+5,battery maximum current,49.5,A,target >= 4 x I_max
 6,estimated hover time,40,min,aim for >= 5 min
