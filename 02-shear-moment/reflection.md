@@ -18,7 +18,7 @@ while pulling T\_hover forward into this pass?)*
 * Material (CF or aluminum): Aluminum
 * Part sourced (name + link): https://www.onlinemetals.com/en/buy/aluminum/0-125-x-1-aluminum-rectangle-bar-6061-t6511-extruded/pid/1125
 * Width x thickness (mm): 25.4 x 3.175 mm
-* Density, rho, and where it came from (g/mm³ or g/cm³ + source): .003 g/cm³, https://www.onlinemetals.com/en/buy/aluminum/0-125-x-1-aluminum-rectangle-bar-6061-t6511-extruded/pid/1125
+* Density, rho, and where it came from (g/mm³ or g/cm³ + source): 2.70 g/cm³, https://www.onlinemetals.com/en/buy/aluminum/0-125-x-1-aluminum-rectangle-bar-6061-t6511-extruded/pid/1125
 * Area, A (mm²): 80.645 mm^2
 * w0 = rho x A (gf/mm): 0.242 gf/mm
 * Total arm self-weight, w0 x L (gf): 29.03 gf

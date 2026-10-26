@@ -5,7 +5,7 @@
 diagram (see Step 4) as an image file in this folder too.
 
 **This builds on `01-precision-sizing`. Don't re-derive your thrust
-number.** Your per-motor hover thrust, `T\_hover = W / 4`, is already sitting
+number.** Your per-motor hover thrust, `T\\\_hover = W / 4`, is already sitting
 in `01-precision-sizing/sizing-table.csv`. That number is **P** everywhere
 below — the load one arm carries at its tip.
 
@@ -25,7 +25,7 @@ round tube — not a fixed example on the board.
 * **Arm length, L = 120 mm** (root to motor-mount centerline). This is a
 stand-in for this exercise, not your final design length — arm length is
 a real decision you'll come back to later in the course.
-* **Load, P = your own `T\_hover`** from `01-precision-sizing`, one motor's
+* **Load, P = your own `T\\\_hover`** from `01-precision-sizing`, one motor's
 share of hover thrust.
 
 ## The two analyses
@@ -64,7 +64,7 @@ V(x) = P
 M(x) = P(L - x)
 ```
 
-Fill in the `V\_idealized\_gf` and `M\_idealized\_gf\_mm` columns of
+Fill in the `V\\\_idealized\\\_gf` and `M\\\_idealized\\\_gf\\\_mm` columns of
 `calc-table.csv` at all five stations. Check: M at x = 0 should equal
 P x L, and V should be constant at P all the way along.
 
@@ -80,7 +80,7 @@ A = width x thickness
 then its distributed self-weight:
 
 ```
-w0 = rho \* A
+w0 = rho \\\* A
 ```
 
 **Units convention, same as `01`:** stay in grams-force and millimeters
@@ -95,7 +95,7 @@ V(x) = P - w0(L - x)
 M(x) = P(L - x) - w0(L - x)^2 / 2
 ```
 
-Fill in `V\_plate\_gf` and `M\_plate\_gf\_mm` at all five stations.
+Fill in `V\\\_plate\\\_gf` and `M\\\_plate\\\_gf\\\_mm` at all five stations.
 
 ## Step 3 — Analysis 2: the round tube, with self-weight
 
@@ -108,7 +108,7 @@ A = (pi / 4) x (OD^2 - ID^2)
 ```
 
 then repeat Step 2's `w0`, `V(x)`, and `M(x)` calculation for this tube.
-Fill in `V\_tube\_gf` and `M\_tube\_gf\_mm`.
+Fill in `V\\\_tube\\\_gf` and `M\\\_tube\\\_gf\\\_mm`.
 
 ## Sanity check (do this before moving on)
 
