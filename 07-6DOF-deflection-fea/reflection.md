@@ -13,12 +13,12 @@ All groups use the same prescribed beam: **L = 120 mm**, **b = 20 mm**, **h = 10
 
 ## Step 2 — Bending in a second plane
 
-* Which is greater: the vertical tip deflection from `Fy` or the lateral tip deflection from `Fz`? By what approximate factor? The vertical tip deflection of Fy by a factor or 0.211824
-* Explain the difference using the two second moments of area, `I\\\\\\\_y` and `I\\\\\\\_z`. due to the thickness being 2 times the height of the beam. its resistance to lateral forces is much greater than its resistance to vertical loads.
+* Which is greater: the vertical tip deflection from `Fy` or the lateral tip deflection from `Fz`? By what approximate factor? The vertical tip deflection of Fy by a factor of 3.91
+* Explain the difference using the two second moments of area, `I\\\\\\\\\\\\\\\_y` and `I\\\\\\\\\\\\\\\_z`. due to the thickness being 2 times the height of the beam. its resistance to lateral forces is much greater than its resistance to vertical loads.
 
 ## Step 3 — Thrust and motor reaction moment
 
-* Which tip translations and rotations are expected to be nonzero under `Fy+My` according to the beam compliance matrix? The longitudinal axial displacement u\_L and torsional rotation theta\_{x,L} remain zero because F\_x = 0 and M\_x = 0
+* Which tip translations and rotations are expected to be nonzero under `Fy+My` according to the beam compliance matrix? The expected nonzero tip displacement and rotation components are v\_L, w\_L, theta\_y, and theta\_z
 * Compare the results for vertical thrust alone and combined thrust and motor reaction moment. Which tip displacement components change when the motor reaction moment is included? How significant is the additional displacement relative to the vertical deflection produced by thrust? Including the motor reaction moment introduces lateral translation and yaw/bending rotation about y. The additional lateral displacement is relatively minor, representing approximately 4.7% of the vertical deflection caused by nominal thrust.
 
 ## Step 4 — Torsion
