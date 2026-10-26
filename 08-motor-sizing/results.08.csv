@@ -3,7 +3,7 @@ step,quantity,value,units,source / notes
 1,battery cell count,4,S,
 1,battery nominal voltage V,22.2,V,3.7 V per cell
 2,hover thrust per motor T_hover,83.8,g,W / 4
-3,motor (name and KV),T-Motor F60 PRO IV V2.0 2550KV Motor,2550 KV,
+3,motor (name and KV),T-Motor F60 PRO IV V2.0 2550KV Motor,2550 KV,https://www.getfpv.com/t-motor-f60-pro-iv-motor.html
 3,propeller,Gemfan 2925 2.9X2.5X5 5-Blade PC Propeller - Props For DJI Avata RC FPV Freestyle 3inch Cinewhoop Drone Quadcopter,,https://rcdrone.top/products/4-6-10pairs-gemfan-2925-2-9x2-5x5-5-blade-pc-propeller
 3,thrust table source,,GEMFAN 2925,https://rcdrone.top/products/4-6-10pairs-gemfan-2925-2-9x2-5x5-5-blade-pc-propeller
 3,hover throttle,30,%,from thrust table; interpolate if needed

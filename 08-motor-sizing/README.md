@@ -29,7 +29,7 @@ Your final choice should meet all of these. If it does not, say so in
 
 |Requirement|Target|
 |-|-|
-|Hover thrust margin, `T\_hover / T\_max`|≤ 35% (same as `01`)|
+|Hover thrust margin, `T\\\_hover / T\\\_max`|≤ 35% (same as `01`)|
 |Hover throttle|below about 60%|
 |ESC current rating, per motor|≥ 1.2 × the motor's full-throttle current|
 |Battery maximum current, `C-rating × capacity`|≥ 4 × the motor's full-throttle current|
@@ -45,12 +45,12 @@ vendor page. Cite the source.
 * The relations from the lecture:
 
 ```text
-Hover thrust per motor:   T\_hover = W / 4
-No-load speed:            rpm\_0 = KV × V
+Hover thrust per motor:   T\\\_hover = W / 4
+No-load speed:            rpm\\\_0 = KV × V
 Torque constant:          Kt = 9.55 / KV          (N m per A)
-Motor torque:             torque = Kt × I\_motor
-Battery maximum current:  I\_batt,max = C-rating × capacity (Ah)
-Hover time (minutes):     t ≈ 60 × 0.8 × capacity (Ah) / (4 × I\_hover)
+Motor torque:             torque = Kt × I\\\_motor
+Battery maximum current:  I\\\_batt,max = C-rating × capacity (Ah)
+Hover time (minutes):     t ≈ 60 × 0.8 × capacity (Ah) / (4 × I\\\_hover)
 ```
 
 The 0.8 in the hover time uses only 80% of the battery's capacity, which
@@ -65,7 +65,7 @@ onboard total is your vehicle weight **W** (g).
 ## Step 2 — Hover thrust per motor
 
 ```text
-T\_hover = W / 4
+T\\\_hover = W / 4
 ```
 
 ## Step 3 — Read the thrust table
@@ -73,30 +73,30 @@ T\_hover = W / 4
 Find two operating points in your thrust table, for your propeller and
 battery voltage:
 
-* **Hover:** the row where thrust equals `T\_hover`. If it falls between
+* **Hover:** the row where thrust equals `T\\\_hover`. If it falls between
 rows, interpolate. Record throttle (%), current (A), and rpm.
 * **Full throttle:** record maximum thrust (g), current (A), and rpm.
 
-Then compute the hover margin, `T\_hover / T\_max`.
+Then compute the hover margin, `T\\\_hover / T\\\_max`.
 
 ## Step 4 — Check the table against the motor model
 
-1. **Speed.** Compute the no-load speed `rpm\_0 = KV × V` using your
+1. **Speed.** Compute the no-load speed `rpm\\\_0 = KV × V` using your
 battery's nominal voltage (3.7 V per cell). Compute the ratio of
-full-throttle rpm to `rpm\_0`. Under load a motor runs below its
+full-throttle rpm to `rpm\\\_0`. Under load a motor runs below its
 no-load speed, so the ratio should be below 1.
 2. **Torque at hover.** Thrust tables report the current drawn from the
 battery. With PWM, the motor current is larger than the battery
 current at part throttle: approximately
 
 ```text
-   I\_motor ≈ I\_battery / throttle
+   I\\\_motor ≈ I\\\_battery / throttle
    ```
 
-   (throttle as a fraction, e.g. 0.40). Then `torque = Kt × I\_motor`.
+(throttle as a fraction, e.g. 0.40). Then `torque = Kt × I\\\_motor`.
 
 3. **Compare with Lab 07.** Convert the hover torque to gf mm
-(1 N m = 101,972 gf mm) and divide by `T\_hover` to get `Q/T` in mm.
+(1 N m = 101,972 gf mm) and divide by `T\\\_hover` to get `Q/T` in mm.
 Lab 07 assumed `Q/T = 15 mm`. How close is your estimate?
 
 ## Step 5 — ESC and battery
@@ -110,7 +110,7 @@ full-throttle current. Record capacity (mAh) and C-rating.
 ## Step 6 — Hover time
 
 ```text
-t ≈ 60 × 0.8 × capacity (Ah) / (4 × I\_hover)      minutes
+t ≈ 60 × 0.8 × capacity (Ah) / (4 × I\\\_hover)      minutes
 ```
 
 Use the hover current from the thrust table (battery current).
@@ -118,7 +118,7 @@ Use the hover current from the thrust table (battery current).
 ## Step 7 — Close the loop
 
 If you changed the motor, battery, or ESC in Steps 3–5, your vehicle
-weight changed. Update `sizing-table.csv`, recompute `T\_hover`, and repeat
+weight changed. Update `sizing-table.csv`, recompute `T\\\_hover`, and repeat
 Steps 3–6 once. Record the **final** values in `results.csv`.
 
 ## Hints
@@ -135,11 +135,11 @@ the three candidates from `01`, and record the switch in `DECISIONS.md`.
 count. A table measured at 6S does not apply to a 4S battery. If your
 exact propeller is not listed, use the closest one and say so.
 
-**Interpolating.** If `T\_hover` falls between two rows (thrust `T1` and
+**Interpolating.** If `T\\\_hover` falls between two rows (thrust `T1` and
 `T2`), estimate any other value `v` the same way for every column:
 
 ```text
-v ≈ v1 + (T\_hover − T1) / (T2 − T1) × (v2 − v1)
+v ≈ v1 + (T\\\_hover − T1) / (T2 − T1) × (v2 − v1)
 ```
 
 **If the table gives power but not current:** `I = P / V`, using the test
@@ -153,7 +153,7 @@ hover-time formulas.
 * Using full-throttle current in the hover-time estimate. Use the hover
 current.
 * Entering throttle as a percentage instead of a fraction in
-`I\_motor ≈ I\_battery / throttle` (40% is 0.40).
+`I\\\_motor ≈ I\\\_battery / throttle` (40% is 0.40).
 * Mixing grams-force and newtons. Thrust stays in gf; torque is in N m
 until you convert it for the `Q/T` comparison.
 
@@ -166,20 +166,20 @@ until you convert it for the `Q/T` comparison.
 |Hover time too short|Larger battery (heavier: repeat the loop), a more efficient motor and propeller (higher g/W at hover), or a lighter build|
 
 Each change affects the others. A bigger battery adds weight, which raises
-`T\_hover`. That is why Step 7 asks you to repeat the calculation.
+`T\\\_hover`. That is why Step 7 asks you to repeat the calculation.
 
 ## Worked example (made-up numbers, not a real motor's)
 
 Suppose W = 600 g on a 4S battery (V = 14.8 V) with a 1950 KV motor.
 
-* `T\_hover = 600 / 4 = 150 g`
+* `T\\\_hover = 600 / 4 = 150 g`
 * Thrust table, hover row (interpolated): 40% throttle, 2.5 A, 14,000 rpm.
 Full throttle: 1,200 g, 30 A, 24,000 rpm.
 * Margin: 150 / 1,200 = 12.5% (meets ≤ 35%). Hover throttle 40% (meets
 < 60%).
-* `rpm\_0 = 1950 × 14.8 = 28,860 rpm`; full-throttle ratio
+* `rpm\\\_0 = 1950 × 14.8 = 28,860 rpm`; full-throttle ratio
 24,000 / 28,860 = 0.83.
-* `Kt = 9.55 / 1950 = 0.0049 N m/A`; `I\_motor ≈ 2.5 / 0.40 = 6.25 A`;
+* `Kt = 9.55 / 1950 = 0.0049 N m/A`; `I\\\_motor ≈ 2.5 / 0.40 = 6.25 A`;
 torque ≈ 0.0049 × 6.25 = 0.031 N m ≈ 3,120 gf mm;
 `Q/T ≈ 3,120 / 150 ≈ 21 mm` (Lab 07 assumed 15 mm).
 * ESC: 1.2 × 30 = 36 A, so a 40 A ESC (per channel) is enough.
