@@ -30,10 +30,10 @@ reason the two might differ. my value is smaller, this could be due to the compo
 
 * Did your vehicle weight change after Steps 3–5? If so, by how much, and
 did your choice still meet the requirements after you repeated the
-calculation? My weight has not changed. still 335.2
+calculation? My weight has not changed. still 379.6
 
 ## What is still uncertain
 
 * Which number in your sizing is least reliable, and how could it be
-measured later in the course?
+measured later in the course? the Battery is of main concern.
 

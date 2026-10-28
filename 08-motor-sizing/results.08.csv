@@ -1,27 +1,27 @@
 step,quantity,value,units,source / notes
-1,vehicle weight W,351.6,g,onboard total from sizing-table.csv
-1,battery cell count,4,S,
-1,battery nominal voltage V,14.8,V,3.7 V per cell
-2,hover thrust per motor T_hover,87.9,g,W / 4
+1,vehicle weight W,379.6,g,onboard total from sizing-table.csv
+1,battery cell count,6,S,
+1,battery nominal voltage V,22.2,V,3.7 V per cell
+2,hover thrust per motor T_hover,94.9,g,W / 4
 3,motor (name and KV),T-Motor F60 PRO IV V2.0 2550KV Motor,2550 KV,https://www.getfpv.com/t-motor-f60-pro-iv-motor.html
 3,propeller,T-MOTORHOBBY  Freestyle Prop,T5143S,https://tmotorhobby.com/goods-851-T-MOTORHOBBY+T5143S+Freestyle+Prop+2Pairsbag.html
 3,thrust table source,,,https://tmotorhobby.com/goods.php?id=960
-3,hover throttle,5,%,from thrust table; interpolate if needed
-3,hover current (battery),0.165, A,per motor
-3,hover rpm,7909,rpm,Linear value
-3,full-throttle thrust T_max,1526,g,per motor
-3,full-throttle current I_max,41.65,A,per motor
-3,full-throttle rpm,26363,rpm,
-3,hover margin T_hover / T_max,5.5,%,target <= 35%
-4,no-load speed KV x V,37740, rpm,
-4,full-throttle rpm / no-load speed,0.47,,should be below 1
+3,hover throttle,8.00%,%,Divided 100% values by 100 then multiplied by 8 to avarge my own values.
+3,hover current (battery),2.77, A,per motor
+3,hover rpm,2081.5,rpm,Linear value
+3,full-throttle thrust T_max,1161.12,g,per motor
+3,full-throttle current I_max,36.95,A,per motor
+3,full-throttle rpm,27753,rpm,
+3,hover margin T_hover / T_max,0.08,%,target <= 35%
+4,no-load speed KV x V,56610, rpm,
+4,full-throttle rpm / no-load speed,0.49,,should be below 1
 4,torque constant Kt,0.004,N m/A,9.55 / KV
 4,hover motor current I_battery / throttle,1.82,A,
 4,hover torque,0.007,N m,Kt x motor current
 4,hover torque,742.36,gf mm,1 N m = 101972 gf mm
-4,Q/T at hover,8.86,mm,Lab 07 assumed 15 mm
+4,Q/T at hover,8.45,mm,Lab 07 assumed 15 mm
 5,ESC rating per motor,50,A,target >= 1.2 x I_max
-5,battery capacity,550,mAh,
-5,battery C-rating,90,C,
-5,battery maximum current,49.5,A,target >= 4 x I_max
-6,estimated hover time,40,min,aim for >= 5 min
+5,battery capacity,700,mAh,
+5,battery C-rating,120/240,C,
+5,battery maximum current,168,A,target >= 4 x I_max
+6,estimated hover time,4.61,min,aim for >= 5 min
