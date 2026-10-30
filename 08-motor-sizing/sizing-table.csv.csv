@@ -1,14 +1,14 @@
 Component,Onboard or Ground,Qty,Unit mass (g),Total mass (g),Part found (name + link),Price ($),Notes
 Frame,Onboard,1,100,100,n/a - assumed,n/a,"FIXED VALUE - designed later in the course, do not change"
 Wiring / Connectors / Power Distribution,Onboard,1,20,20,n/a - assumed,n/a,"FIXED VALUE - given allowance, do not change"
-Motors,Onboard,4,33.3,133.2,T-Motor F60 PRO IV V2.0 2550KV Motor,$27 ,https://www.getfpv.com/t-motor-f60-pro-iv-motor.html
-ESC (4-in-1),Onboard,1,13.8,13.8,SpeedyBee F405 BLS 50A 30x30 4-in-1 ESC,$51 ,https://rcdrone.top/products/speedybee-f405-bls-50a-30x30-4-in-1-esc 
+Motors,Onboard,4,33.3,133.2,T-Motor F60 PRO IV V2.0 2550KV Motor,$27 ,https://tmotorhobby.com/goods-960-F60PRO+%E2%85%A3+V20+For+top+racing%EF%BC%8CT-MOTORHOBBY+F60+PRO+IV+V20+22075+1750KV1950KV2550KV+Brushless+Racing+Motor.html
+ESC (4-in-1),Onboard,1,9.2,9.2,T-MOTORHOBBY Mini F45A - 45A 6S BLHeli32 4-in-1 ESC,$78 ,https://tmotorhobby.com/goods-1018-T-MOTORHOBBY+Mini+F45A+-+45A+6S+BLHeli32+4-in-1+ESC.html
 Propellers (+ spares),Onboard,4,4.1 g,16.4 g ,T-MOTORHOBBY  Freestyle Prop T5143S,$3.19 per 2,https://tmotorhobby.com/goods-851-T-MOTORHOBBY+T5143S+Freestyle+Prop+2Pairsbag.html
-Battery (LiPo),Onboard,1,79 g,79 g,GAONENG GNB 4S 14.8V 700mAh 120C XT30 LiPo Battery,30.70 per 2,https://www.gaoneng.shop/products/gaoneng-gnb-4s-14.8v-700mah-120c-xt30-lipo-battery
-Flight Controller,Onboard,1,10.7 g,10.7 g,SpeedyBee F7 V3 Flight Controller,$63 ,https://rcdrone.top/products/speedybee-f7-v3-flight-controller 
+Battery (LiPo),Onboard,1,122 g,122 g,GAONENG GNB LiHV 4S 15.2V 1100mAh 120C XT60 LiPo Battery,39.50 per 2,https://www.gaoneng.shop/products/gaoneng-gnb-lihv-4s-15.2v-1100mah-120c-xt60-lipo-battery
+Flight Controller,Onboard,1,4.7 g,4.7 g,T-MOTORHOBBY Mini Racer 20x20 F7 HD Flight Controller,$31 ,https://tmotorhobby.com/goods-1172-T-MOTORHOBBY+Mini+Racer+20x20+F7+HD+Flight+Controller.html
 RC Receiver,Onboard,1,0.5 g,0.5 g,TBS Crossfire Nano Rx Pro,$49 ,https://rcdrone.top/products/tbs-crossfire-nano-rx-pro 
 RC Transmitter,Ground - excluded,1,288 g,288 g,RadioMaster Pocket Radio Controller (M2) - 16Channel 2.4GHZ ExpressLRS MPM CC2500 EdgeTX System,$109 ,https://rcdrone.top/products/radiomaster-pocket-radio-controller-m2 
 Companion Computer (Track A only),Onboard,1,,,,,leave blank if Track B
 Camera (Track A only),Onboard,1,,,,,leave blank if Track B
 GPS Module (Track A only),Onboard,1,,,,,leave blank if Track B
-Total (Onboard only),,,,379.6 g,,$211.73 ,sum of Total mass for all Onboard rows - this is your W
+Total (Onboard only),,,,406 g,,$237.26 ,sum of Total mass for all Onboard rows - this is your W

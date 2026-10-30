@@ -1,8 +1,8 @@
 step,quantity,value,units,source / notes
-1,vehicle weight W,379.6,g,onboard total from sizing-table.csv
-1,battery cell count,6,S,
-1,battery nominal voltage V,22.2,V,3.7 V per cell
-2,hover thrust per motor T_hover,94.9,g,W / 4
+1,vehicle weight W,363,g,onboard total from sizing-table.csv
+1,battery cell count,4,S,
+1,battery nominal voltage V,14.8,V,3.7 V per cell
+2,hover thrust per motor T_hover,90.75,g,W / 4
 3,motor (name and KV),T-Motor F60 PRO IV V2.0 2550KV Motor,2550 KV,https://www.getfpv.com/t-motor-f60-pro-iv-motor.html
 3,propeller,T-MOTORHOBBY  Freestyle Prop,T5143S,https://tmotorhobby.com/goods-851-T-MOTORHOBBY+T5143S+Freestyle+Prop+2Pairsbag.html
 3,thrust table source,,,https://tmotorhobby.com/goods.php?id=960

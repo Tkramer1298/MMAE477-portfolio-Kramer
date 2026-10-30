@@ -1,0 +1,13 @@
+section,part,qty,unit_price_usd,line_total_usd,mass_g_each,link,key_spec,reason,
+buy_now,Motor,4,$27.00 ,$108.00 ,133.2,https://www.getfpv.com/t-motor-f60-pro-iv-motor.html,KV rating,KV has to match voltage and size or it will be sluggish or too much.,
+buy_now,Propeller (plus spares),8,$1.60 ,$12.80 ,32.8,https://tmotorhobby.com/goods-851-T-MOTORHOBBY+T5143S+Freestyle+Prop+2Pairsbag.html,Diameter and Pitch,"These decide thrust, top speed, and how hard motors work.",
+buy_now,ESC,1,$78.00 ,$78.00 ,9.2,https://tmotorhobby.com/goods-1018-T-MOTORHOBBY+Mini+F45A+-+45A+6S+BLHeli32+4-in-1+ESC.html,Continuous current rating,It has to exceed the max current at max thrust so it doesn't burnout.,
+buy_now,Battery,1,$39.50 ,$17.25 ,122,https://www.gaoneng.shop/products/gaoneng-gnb-lihv-4s-15.2v-1100mah-120c-xt60-lipo-battery,Cell count,"Voltage has to match what the motors, ESC, and flight controller are rated for.",
+buy_now,Flight controller,1,$31.00 ,$31.00 ,4.7,https://tmotorhobby.com/goods-1172-T-MOTORHOBBY+Mini+Racer+20x20+F7+HD+Flight+Controller.html,mounting pattern:,20mm X 20mm,
+buy_now,Frame fasteners,1,$10.94 ,$10.94 ,,ShareGoo M3 Nylon Standoffs Hex Spacers Screws Nuts Assorted kit for RC FPV Drone Quadcopter Frame Audunio PCB Board (180PCS/Lot): Amazon.com: Industrial & Scientific,Thread size,Screws have to match the frame and stack holes exactly. The length matters too.,
+buy_now,Wiring and connectors,,, $-   ,,,,,
+buy_now,Filament,2,$17.99 ,$35.98 ,70,ELEGOO TPU Filament 1.75mm Colored 1KG – ELEGOO US,Material type,Decides whether the parts flex and survive crashes or crack on the first hit.,"the mass is the mass of the frame, the spool itself is 1kg"
+later,Radio receiver,1,, $-   ,,,,,
+later,Companion computer,1,, $-   ,,,,,
+later,Camera,1,,,,,,,
+TOTAL,,,,$293.97 ,371.9,,,,
