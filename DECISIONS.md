@@ -24,6 +24,7 @@ defense this semester, they ask exactly these questions.
 |11|10/30/2026|changed the battery being used to power the drone.|a 700 mah battery over a 1100 mah one.|AI|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer.git|no uncertainties|
 |12|10/30/2026|changed the esc being used|The previous ESC picked was not all that reliable compared to the website where the current one was found.|the website used to find most of our components helps recommend parts that work with one another well.|https://tmotorhobby.com/goods-1018-T-MOTORHOBBY+Mini+F45A+-+45A+6S+BLHeli32+4-in-1+ESC.html|no uncertainties|
 |13|10/30/2026|changed the flight controller|after making an ESC change, it made sense to listen to what the website recommended and go with a flight controller that would stack with our new ESC|the website used to find most of our components helps recommend parts that work with one another well.|https://tmotorhobby.com/goods-1172-T-MOTORHOBBY+Mini+Racer+20x20+F7+HD+Flight+Controller.html|no uncertainties|
+|14|11/13/2026|Vibration testing on our own beam designs|No decitions to be made, just testing|11-Arm-Vibrations|https://github.com/Tkramer1298/MMAE477-portfolio-Kramer.git|no uncertainties|
 
 
 

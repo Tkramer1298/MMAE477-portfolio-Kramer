@@ -1,0 +1,12 @@
+quantity,value,units
+bare_f1_vertical,45.408,Hz
+bare_f1_lateral,13.622,Hz
+motor_f1_vertical,6.337,Hz
+motor_f1_lateral,1.901,Hz
+motor_f2_vertical,200.11,Hz
+peak_1P_lateral,0.009718,mm
+peak_BPF_vertical,8.85E-05,mm
+peak_2BPF_vertical,4.41E-06,mm
+modified_beam_mass,3.105,g
+modified_f1_vertical,5.132,Hz
+modified_f1_lateral,1.539,Hz
